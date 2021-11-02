@@ -231,13 +231,17 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>t<leader> :tabnext<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+" nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+" Modified by cong.w, easy to remember --11.2021
+nmap <Leader>gt :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
+" Go to the last opened buffer --cong 10.2021
+map <leader>bb :b#<cr>
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -330,7 +334,7 @@ map <leader>q :e ~/buffer<cr>
 map <leader>pp :setlocal paste!<cr>
 
 " --cong.w fast quit
-map <leader>q :q<cr> 
+" map <leader>q :q<cr>
 " --cong.w paste
 set clipboard=unnamed
 
